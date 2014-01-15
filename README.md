@@ -7,7 +7,13 @@ via mongo records.
 This requires a Twitter and/or Facebook application tied to your domain.
 For local development, edit your /etc/hosts file to simulate transactions from / to your domain.
 
- Membership includes ACL/permission, which is defined in frame config files through role and action nodes:
+This frame includes an admin section for managing ACL and membership that is dependant on the admin frame.
+If for some reason you don't want this frame / the admin frame dependency it can be removed without consequence.
+
+It also includes a view_helper menu for logging in and out of your oauth identity:
+`helpers.member.menu()`. 
+
+Membership includes ACL/permission, which is defined in frame config files through role and action nodes:
 
  ``` json
 
@@ -38,6 +44,8 @@ For local development, edit your /etc/hosts file to simulate transactions from /
 	]
 
 ```
+
+All new roles/actions added requires site restart.
 
 The Members module requires several parameters to be defined in the apiary; the easiest way to do this is to define
 a file "passport_config.json" in the root with the parameters defined like the examples below.
